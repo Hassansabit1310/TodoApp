@@ -1,7 +1,14 @@
 const InputTodo=()=>{
+    const onChangeHandler=(e)=>{
+console.log(e.target.value);
+    }
     return(
         <>
-        <h1 className="input">input here</h1>
+        
+        <form>
+            <input type="text"  placeholder="Add to do" onChange={onChangeHandler} />
+            <button type="submit">Submit</button>
+        </form>
         </>
     )
 }
