@@ -30,7 +30,7 @@ const TodoLogic=()=>{
     ]
    )
   }
-   
+   console.log(todos);
   const onChangeHandler=(id)=>{
 
     
