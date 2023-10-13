@@ -1,15 +1,26 @@
-const InputTodo=()=>{
+import { useState } from "react"
+
+const InputTodo=({addToDo})=>{
+
+    const  [title,setTitle]=useState('')
     const onChangeHandler=(e)=>{
-console.log(e.target.value);
+setTitle(e.target.value)
     }
+const handleSubmit=(e)=>{
+    e.preventDefault();
+    addToDo(title)
+}
+
     return(
         <>
         
-        <form>
-            <input type="text"  placeholder="Add to do" onChange={onChangeHandler} />
-            <button type="submit">Submit</button>
+        <form onSubmit={handleSubmit}>
+            <input type="text"  placeholder="Add to do" value={title} onChange={onChangeHandler} />
+            <button type="submit" >Submit</button>
         </form>
         </>
     )
 }
 export default InputTodo
+
+

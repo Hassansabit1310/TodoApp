@@ -21,6 +21,21 @@ const TodoLogic=()=>{
     },
   ])
 
+  const addToDo=(value)=>{
+    const newTodo = {
+      id: todos.length+1,
+      title: value,
+      completed: false,
+    };
+
+    setTodos(
+      [
+        ...todos,newTodo
+      ]
+    )
+
+  }
+  console.log(todos);
   const delTodo=(id)=>{
    setTodos(
     [
@@ -30,7 +45,7 @@ const TodoLogic=()=>{
     ]
    )
   }
-   console.log(todos);
+ 
   const onChangeHandler=(id)=>{
 
     
@@ -55,8 +70,8 @@ const TodoLogic=()=>{
     return(
         <>
         <div>
-        <InputTodo/>
-        <TodoList todosProps={todos} setTodos={setTodos} onChangeHandler={onChangeHandler} delTodo={delTodo}/>
+        <InputTodo addToDo={addToDo}/>
+        <TodoList todosProps={todos} setTodos={setTodos} onChangeHandler={onChangeHandler} delTodo={delTodo} addToDo={addToDo}/>
         </div>
         
         </>
